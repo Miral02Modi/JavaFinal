@@ -8,11 +8,20 @@ class Coupon{
        System.out.println("Enter The coupen Range");
        int  range = sc.nextInt(),i=0;
        Random ranGen = new Random();	
-    	
-       while(i<numCoup){         
-
-        System.out.println("Coupon is generated"+Math.round(ranGen.nextInt(range)	)); 
-        i++;
-      }
+       int arr[] = new int[numCoup];
+       Random ar = new Random();  
+       boolean flag = false;	
+       int gen;				
+       while(i < numCoup){
+	gen=Math.round(ar.nextInt());		
+	for(int j=0 ;j<arr.length; j++){
+	    if(arr[i] != gen)
+		flag = false;		
+	}
+	if(flag){
+	   System.out.println(gen);
+	   i--; 			
+	}
+      }	
     }
 }
