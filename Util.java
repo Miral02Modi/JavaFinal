@@ -21,6 +21,32 @@ class Util
          }  
     	return arr;
     }	
+	
+     public static int[] insertionSort(int arr[]) {  
+        for (int j = 1; j < arr.length; j++) {  
+            int key = arr[j];  
+            int i = j-1;  
+            while ( (i > -1) && ( arr[i] > key ) ) {  
+                arr[i+1] = arr[i];  
+                i--;  
+            }  
+            arr[i+1] = key;  
+        }  
+	return arr;
+    }  	
+
+    public static char[] insertionSort(char arr[]) {  
+        for (int j = 1; j < arr.length; j++) {  
+            char key = arr[j];  
+            int i = j-1;  
+            while ( (i > -1) && ( arr[i] > key ) ) {  
+                arr[i+1] = arr[i];  
+                i--;  
+            }  
+            arr[i+1] = key;  
+        }  
+	return arr;
+    }  			
 
     static int[] bubbleSortInt(int arr[]) { 
 	int temp=0;  
