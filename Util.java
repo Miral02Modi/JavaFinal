@@ -3,7 +3,7 @@ import java.time.LocalTime;
 class Util
 {
    
-   static char[] bubbleSort(String str) {  
+   static char[] bubbleSortString(String str) {  
         char temp = 0;  
 	char arr[] = str.toCharArray();	
          for(int i=0; i < arr.length; i++)
@@ -21,8 +21,26 @@ class Util
          }  
     	return arr;
     }	
+
+    static int[] bubbleSortInt(int arr[]) { 
+	int temp=0;  
+         for(int i=0; i < arr.length; i++)
+	{  
+                 for(int j=1; j < (arr.length-i); j++)
+		{  
+                          if(arr[j-1] > arr[j])
+			  {  
+                                 temp = arr[j-1];  
+                                 arr[j-1] = arr[j];  
+                                 arr[j] = temp;  
+                         }  
+                          
+                 }  
+         }  
+    	return arr;
+    }		
 	
-   static public String binarySearch(char[] arr, char key) {
+   static public String binarySearchString(char[] arr, char key) {
 		
         int start = 0;
         int end = arr.length - 1;
@@ -39,7 +57,27 @@ class Util
             }
         }
         return null;
-    }		 	   			
+    }		 
+
+  static public int binarySearchInt(int[] arr, int key) {
+		
+        int start = 0;
+        int end = arr.length - 1;
+        while (start <= end) {
+            int mid = (start + end) / 2;
+            if (key == arr[mid]) {
+                return arr[mid];
+            }
+            if (key < arr[mid]) {
+            	end = mid - 1;
+            } else {
+            	start = mid + 1;
+            }
+        }
+        return -1;
+    }	
+
+	   			
    long startTime()
    {
 	LocalTime lt = LocalTime.now();

@@ -14,7 +14,7 @@
 	}catch(Exception e){
 	     e.printStackTrace();				
 	}
-	char ch[] =Util.bubbleSort(str);
-	System.out.println(Util.binarySearch(ch,'m'));
+	char ch[] =Util.bubbleSortString(str);
+	System.out.println(Util.binarySearchString(ch,'m'));
    }	
 }
