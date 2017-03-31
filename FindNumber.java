@@ -1,39 +1,6 @@
 import java.util.Scanner;
 class FindNumber{
-      static int count=0;	     
-      /*public static int binarySearch(int[] inputArr, int ch) {
-        int start = 0;
-        int end = inputArr.length - 1;
-	Scanner sc = new Scanner(System.in);
-	int count=0;
-	//ch++;
-        while (start <= end) {
-            int mid = (start + end) / 2;
-	    
-            
-	    if(ch==count){
-	    	System.out.println("Your Number is"+inputArr[mid]+" yes or No");
-	        String str = sc.next(); 
-		boolean flag = str.equalsIgnoreCase("yes");
-		mid=mid+1;
-		if(!flag)
-		   System.out.println("Your Number is"+inputArr[mid]);
-		return 	0;
-            }		
-	    System.out.println("Value is less than "+inputArr[mid]+ " yes or No");
-	    String str = sc.next();
-	    count++;	
-	    boolean flag = str.equalsIgnoreCase("yes");			
-            if (flag) {
-                end = mid - 1;
-            } else {
-                start = mid + 1;
-            }
-        }
-        return -1;
-    }*/
-     
-
+    static int count=0;	       
     static boolean isPresent(int start , int end ,int ch)	
      {
 	
@@ -44,7 +11,7 @@ class FindNumber{
 	  System.out.println("Your Number is "+mid+"?");
 	  String str = scr.next(); 
 	  boolean flag = str.equalsIgnoreCase("yes");
-	  if(flag)
+ 	  if(flag)
 	    return true;
 	  else{
 	    System.out.println("Your Number is"+(mid+1));	
