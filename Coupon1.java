@@ -1,6 +1,7 @@
+import java.util.Random;
 import java.util.Scanner;
 
-public class Coupon1 {
+public class CouponJava {
 	public static void main(String[] args) {
 		
 		int count=0;
@@ -11,7 +12,6 @@ public class Coupon1 {
 		int arr[] = new int[numCoup];
 		int count1=0;
 		Random rm = new Random(); 
-		//System.out.println(arr.length);
 		for (int i = 1; count1 != numCoup; i++) {
 			boolean flag=true;
 			int gen = (int)Math.round(Math.random() * numCoup ) +1 ;
@@ -21,13 +21,12 @@ public class Coupon1 {
 					break;
 				}
 			}
-			if(flag){
+			if(flag && gen != numCoup+1){
 				System.out.println(gen);
 				arr[count1++] = gen; 
 			}	
 			count++;
 		}
-		System.out.println("Count is::"+count);
+		System.out.println("Count is::"+count); 
 	}
 }
-
