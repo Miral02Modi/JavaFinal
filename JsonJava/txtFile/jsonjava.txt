@@ -1,0 +1,1 @@
+{"Wheet":[{"Type":"Guju","Price":"10rs","Weight":"12kg"}],"Pulses":[{"Type":"maha","Price":"13rs","Weight":"13kg"}]}
