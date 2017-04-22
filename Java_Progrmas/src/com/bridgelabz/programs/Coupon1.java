@@ -7,11 +7,16 @@ public class Coupon1 {
 	public static void main(String[] args) {
 		
 		int count=0;
-		int numCoup;
+		int numCoup = 0;
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter The value::");
-		numCoup = sc.nextInt();
-		System.out.println(Util.generator(numCoup));;
+		if(sc.hasNextInt())
+			numCoup = sc.nextInt();
+		else{
+			System.out.println("Enter the integer value");
+			main(args);
+		}	
+		System.out.println(Util1.generator(numCoup));
 	}
 }	
 

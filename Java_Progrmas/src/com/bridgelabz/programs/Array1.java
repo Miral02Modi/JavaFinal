@@ -6,11 +6,11 @@ import java.io.*;
 
 public class Array1 {
 	public static void main(String args[]) {
-		Scanner sc = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
 		System.out.print("Enter The rows::");
-		int rows = sc.nextInt();
+		int rows = scanner.nextInt();
 		System.out.print("Enter The cols::");
-		int cols = sc.nextInt();
-		Util.d2Array(rows, cols);
+		int cols = scanner.nextInt();
+		Util1.d2Array(rows, cols);
 	}
 }

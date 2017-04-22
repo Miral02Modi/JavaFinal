@@ -4,7 +4,6 @@ import java.util.ArrayDeque;
 import java.util.Random;
 import java.util.Scanner;
 
-import BankCashCounter.Bank_Counter;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -46,7 +45,7 @@ class Util {
 	static void bankCase(ArrayDeque q1, int length){
 		Scanner sc = new Scanner(System.in);
 		
-		Bank_Counter bnk = null;
+		com.bridgelabz.programs.Bank_Counter bnk = null;
 		int count = 0;
 		boolean nextUser=true; 
 		boolean flag = true;
@@ -61,7 +60,7 @@ class Util {
 			
 			if (count == 0 && nextUser){
 				System.out.println("Next User::");
-				bnk = (Bank_Counter) q1.remove();
+				bnk = (com.bridgelabz.programs.Bank_Counter) q1.remove();
 				length--;
 			}	
 			nextUser = false;
@@ -124,7 +123,10 @@ class Util {
 		}
 		return win;
 	}
-	static void d2Array(int rows, int cols) {
+	static void d2Array(int rows, int cols) {		
+		String s1="";
+		StackDemo sd = new StackDemo();
+
 		Scanner sc = new Scanner(System.in);
 		int arr[][] = new int[rows][cols];
 		for (int i = 0; i < rows; i++) {

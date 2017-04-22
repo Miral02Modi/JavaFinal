@@ -20,4 +20,8 @@ public interface AddressBookInter {
 	public void display();
 	
 	public void display(String name);
+	
+	public HashMap fileReader();
+	
+	public void fileWriter();
 }	

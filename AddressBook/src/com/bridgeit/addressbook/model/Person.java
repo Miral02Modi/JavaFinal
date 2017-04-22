@@ -1,6 +1,8 @@
 package com.bridgeit.addressbook.model;
 
-public class Person {
+import java.io.Serializable;
+
+public class Person implements Serializable {
 
 	private String firstName;
 	private String lastName;
@@ -11,8 +13,6 @@ public class Person {
 	private String state;
 	private int id;
 
-	
-	
 
 	public long getZipCode() {
 		return zipCode;

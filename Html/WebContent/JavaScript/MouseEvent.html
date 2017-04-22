@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+</head>
+<body onmousedown="whichElement(event)">
+	<p>Click somewhere in the document. An alert box will alert the
+		name of the element you clicked on.</p>
+	<h3>This is a heading</h3>
+	<p>This is a paragraph.</p>
+	<p onmouseover="myFunction(this,'green','mousedown')"
+		onmouseout="myFunction(this,'yellow','mouseup')">My name is Miral</p>
+	<h2 ondblclick="style.color='green'">Double Click</h2>
+	<script>
+		function whichElement(e) {
+			var targ;
+			if (!e) {
+				var e = window.event;
+			}
+			if (e.target) {
+				targ = e.target;
+			} else if (e.srcElement) {
+				targ = e.srcElement;
+			}
+			var tname;
+			tname = targ.tagName;
+			alert("You clicked on a " + tname + " element.");
+		}
+		function myFunction(elmnt, clr, name) {
+			elmnt.style.color = clr;
+		}
+	</script>
+</body>
+</html>

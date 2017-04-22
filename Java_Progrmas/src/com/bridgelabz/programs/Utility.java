@@ -1,18 +1,30 @@
 package com.bridgelabz.programs;
+
+import java.util.Scanner;
+
 class Utility {
 	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		
 		int arr[] = { 1, 4, 3, 5, 2 };
-		arr = Util.insertionSort(arr);
+		arr = Util1.insertionSort(arr);
+		
 		for (int i = 0; i < arr.length; i++)
 			System.out.println(arr[i]);
-		arr = Util.bubbleSortInt(arr);
+		arr = Util1.bubbleSortInt(arr);
 		System.out.println(Util.binarySearchInt(arr, 3));
+		
+		
 		String str = "hello welcome to java world";
-		char ch[] = Util.insertionSort(str.toCharArray());
+		String ch[] = Util1.insertionSortStr(str.split(" "));
 		for (int i = 0; i < ch.length; i++)
 			System.out.println(ch[i]);
 		char ch1[] = Util.bubbleSortString(str);
-		System.out.println(Util.binarySearchString(ch, 'h'));
+		
+	
+		System.out.println("Enter the String");
+		String srchString = sc.next();
+		System.out.println(Util1.binarySearchString1(str.split(" "),srchString));
 
 	}
 }

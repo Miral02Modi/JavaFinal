@@ -14,7 +14,8 @@ public class Factor {
 				}
 			}
 		} else {
-			System.err.println("Enter integers only");
+			System.out.println("Enter integers only");
+			main(args);
 		}
 		scn.close();
 	}

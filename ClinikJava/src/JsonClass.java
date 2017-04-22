@@ -13,6 +13,7 @@ import org.json.simple.parser.ParseException;
 public class JsonClass {
 
 	public void jsInput(ArrayList ls) {
+		
 		JSONObject main = new JSONObject();
 		JSONObject subjs = new JSONObject();
 		JSONArray ja = new JSONArray();
@@ -23,29 +24,41 @@ public class JsonClass {
 		System.out.println(main);
 	}
 
-	static void writeFileJson(JSONArray arr,String u) {
+	/**
+	 * file Writer
+	 * 
+	 * @param JSONArray
+	 * @param fileName
+	 */
+	static void writeFileJson(JSONArray arr, String u) {
 		FileWriter fw = null;
 		JSONObject main = new JSONObject();
 		main.put("Appointment", arr);
-		
-		System.out.println(main);
+
 		try {
-			System.out.println("MiralModi");
-			fw = new FileWriter(Url.url+u);
+			fw = new FileWriter(Url.url + u);
 			fw.write(main.toJSONString());
 			fw.flush();
+			System.out.println("Successful");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
+	/**
+	 * json file reader
+	 * 
+	 * @param file
+	 *            Name
+	 * @return
+	 */
 	static JSONObject readFileJson(String u) {
 		FileReader fis = null;
 		JSONParser parser1 = new JSONParser();
 		JSONObject jsonobj = null;
 		try {
 
-			fis = new FileReader(Url.url+u);
+			fis = new FileReader(Url.url + u);
 			Object obj = parser1.parse(fis);
 			jsonobj = (JSONObject) obj;
 		} catch (Exception e) {

@@ -13,6 +13,8 @@ import java.io.PrintWriter;
 import java.time.LocalTime;
 
 class Util {
+	static int fin = 0;
+	/*pelindrom checker*/
 	static double gamlerPers(double num,int amt,int goal){
 		int i = 0;
 		double win = 0;
@@ -27,36 +29,39 @@ class Util {
 		}
 		return win;
 	}
+	
+	
+	/*2d Array input*/
 	static void d2Array(int rows, int cols) {
-		Scanner sc = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
 		int arr[][] = new int[rows][cols];
 		for (int i = 0; i < rows; i++) {
 			for (int j = 0; j < cols; j++) {
 				System.out.print("Enter The Data::");
-				arr[i][j] = sc.nextInt();
+				arr[i][j] = scanner.nextInt();
 			}
 		}
 		System.out.println("\n------------------------");
 
-		OutputStream out = new OutputStream() {
+		OutputStream outputStream = new OutputStream() {
 
 			public void write(int b) throws IOException {
 
 			}
 		};
-		OutputStreamWriter ow = new OutputStreamWriter(out);
-		PrintWriter pw = new PrintWriter(System.out);
-		;
+		OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
+		PrintWriter printwriter = new PrintWriter(System.out);
 		for (int i = 0; i < rows; i++) {
 			for (int j = 0; j < cols; j++) {
-				pw.println(arr[i][j]);
+				printwriter.println(arr[i][j]);
 			}
 		}
-		pw.flush();
-		pw.close();
+		printwriter.flush();
+		printwriter.close();
 	}
 	
-	static int fin = 0;
+	
+	/*checker prime number*/ 
 	public static boolean chckPrime(int num) {
 		boolean flag = true;
 		for (int i = 2; i <= num / 2; i++) {
@@ -68,10 +73,13 @@ class Util {
 		return flag;
 	}
 
+	/*factorial checker*/
 	public static boolean checkFact(int multiple, int multiplier) {
 		return multiple % multiplier == 0;
 	}
 
+	
+	/*binary search method for value is present or not*/
 	static boolean isPresent(int start, int end, int ch) {
 
 		int mid = (start + end) / 2;
@@ -101,6 +109,8 @@ class Util {
 		return true;
 	}
 	
+	
+	/*flip coin winner*/
 	static double flipCoin(double flip){
 		double head=0,tail=0;
 		for(int i=1; i<flip ;i++){
@@ -112,6 +122,9 @@ class Util {
 		double perset=(head/flip)*100;
 		return perset;
 	}
+	
+	
+	/*year validation code*/
 	static boolean isValidDate(int year) {
 		int count = 0;
 		while (year != 0) {
@@ -119,9 +132,12 @@ class Util {
 			count++;
 			year = year / 10;
 		}
-		return count == 4;
+		return count > 0;
 	}
-	static double harmo(double num){
+	
+
+	/*harmonic number*/
+	static double harmonic(double num){
 		double harmo = 0;
 		for(double i=1 ;i<=num; i++){
 			double j=1/i;
@@ -129,6 +145,8 @@ class Util {
 		}
 		return harmo;
 	}
+	
+	/*sum of the number checker*/
 	static int sum(int arr[]){
 		int count = 0;
 		for (int i = 0; i < arr.length; i++) {
@@ -144,15 +162,18 @@ class Util {
 		return count;
 	}
 
+	
+	
+	/*bubble sort for character*/
 	static char[] bubbleSortString(String str) {
-		char temp = 0;
+		char swap = 0;
 		char arr[] = str.toCharArray();
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = 1; j < (arr.length - i); j++) {
 				if (arr[j - 1] > arr[j]) {
-					temp = arr[j - 1];
+					swap = arr[j - 1];
 					arr[j - 1] = arr[j];
-					arr[j] = temp;
+					arr[j] = swap;
 				}
 
 			}
@@ -160,6 +181,7 @@ class Util {
 		return arr;
 	}
 	
+	/*coupon number generator*/
 	static public int generator(int numCoup){
 		int count=0;
 		int arr[] = new int[numCoup];
@@ -183,6 +205,8 @@ class Util {
 		System.out.println("Count is::"+count);
 		return count;
 	}
+	
+	/*insertion sor for integer*/
 	public static int[] insertionSort(int arr[]) {
 		for (int j = 1; j < arr.length; j++) {
 			int key = arr[j];
@@ -196,6 +220,7 @@ class Util {
 		return arr;
 	}
 
+	/*insertion sort for character*/
 	public static char[] insertionSort(char arr[]) {
 		for (int j = 1; j < arr.length; j++) {
 			char key = arr[j];
@@ -209,14 +234,15 @@ class Util {
 		return arr;
 	}
 
+	/*bubble sort for integer*/
 	static int[] bubbleSortInt(int arr[]) {
-		int temp = 0;
+		int swap = 0;
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = 1; j < (arr.length - i); j++) {
 				if (arr[j - 1] > arr[j]) {
-					temp = arr[j - 1];
+					swap = arr[j - 1];
 					arr[j - 1] = arr[j];
-					arr[j] = temp;
+					arr[j] = swap;
 				}
 
 			}
@@ -224,17 +250,18 @@ class Util {
 		return arr;
 	}
 
-	static public String binarySearchString(char[] arr, char key) {
+	/*binary search for string*/
+	static public String binarySearchString(String[] arr, String key) {
 
 		int start = 0;
 		int end = arr.length - 1;
 		while (start <= end) {
 			int mid = (start + end) / 2;
-			if (key == arr[mid]) {
+			if (key == arr[mid]) {	
 				String s1 = "" + arr[mid];
 				return s1;
 			}
-			if (key < arr[mid]) {
+			if (key.compareTo(arr[mid])<0) {
 				end = mid - 1;
 			} else {
 				start = mid + 1;
@@ -243,6 +270,7 @@ class Util {
 		return null;
 	}
 
+	/*binary serch for integer*/
 	static public int binarySearchInt(int[] arr, int key) {
 
 		int start = 0;
@@ -261,18 +289,22 @@ class Util {
 		return -1;
 	}
 
+	
+	/*start time*/
 	long startTime() {
 		LocalTime lt = LocalTime.now();
 		System.out.println(lt.getHour() + ":" + lt.getMinute() + ":" + lt.getSecond());
 		return System.currentTimeMillis();
 	}
-
+	
+	/*endtime*/
 	long endTime() {
 		LocalTime lt = LocalTime.now();
 		System.out.println(lt.getHour() + ":" + lt.getMinute() + ":" + lt.getSecond());
 		return System.currentTimeMillis();
 	}
 
+	/*elapse time*/
 	long elapseTime() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter 1 for Start the clock");
@@ -291,6 +323,8 @@ class Util {
 		return eTime - sTime;
 	}
 
+	
+	/*stock price to know*/
 	void stockPrice(Stock st[], String name) {
 		int price = 0;
 		for (int i = 0; i < st.length; i++) {

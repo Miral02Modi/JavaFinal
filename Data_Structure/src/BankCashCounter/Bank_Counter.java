@@ -14,7 +14,7 @@ public class Bank_Counter {
 	}
 	
 	
-	double widthDrawal(double amt){
+	public double widthDrawal(double amt){
 		if(this.sal < amt){
 			System.out.println("Your Balance is less");
 			return this.sal;
@@ -28,7 +28,7 @@ public class Bank_Counter {
 		return this.sal;
 	}
 	
-	double deposite(double amt){
+	public double deposite(double amt){
 		if(amt < 10000){
 			System.out.println("You have to deposite mininmum 10000");
 			return 0;

@@ -8,9 +8,9 @@ public class LeapYear {
 
 		Scanner scr = new Scanner(System.in);
 		System.out.print("Enter The year::");
+		if(scr.hasNextInt()){
 		year = scr.nextInt();
-
-		if (Util.isValidDate(year)) 
+		if (Util1.isValidDate(year)) 
 		{
 			if (year % 4 == 0 && year % 100 != 0)
 				System.out.println("Given year is Leap year");
@@ -19,6 +19,10 @@ public class LeapYear {
 			else
 				System.out.println("Given year is not Leap year");
 		}else
-			System.out.println("Please enter valid date");
+			System.out.println("Please enter valid year");
+		}else{
+			System.out.println("Enter the integer only");
+			main(args);
+		}
 	}
 }

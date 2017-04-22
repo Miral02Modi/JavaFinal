@@ -6,7 +6,13 @@ public class Harmonic {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter The Number::");
-		double num = sc.nextDouble();
-		System.out.println(Util.harmo(num));
+		if (sc.hasNextInt()) {
+			double num = sc.nextDouble();
+			System.out.println(Util1.harmonic(num));
+		} else {
+			System.out.println("Enter the integer Only");
+			main(args);
+		}
+
 	}
 }

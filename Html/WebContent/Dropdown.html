@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Index</title>
+<style>
+*{
+	margin: 0px;
+	padding: 0px
+}
+
+#container ul {
+	list-style: none;
+}
+
+#container ul ul {
+	display: none;
+}
+
+#container ul li:hover>ul {
+	display: block;
+}
+
+#container ul li {
+	color: white;
+	background-color: #4CAF50;
+	width: 120px;
+	height: 50px;
+	padding: 1px;
+	border: 1px solid white;
+	line-height: 50px;
+	text-align: center;
+	float: left;
+	font-size: 20px;
+	position: relative;
+	border-radius: 8px;
+}
+
+#container ul li:hover {
+	color: red;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	background-color: white;
+}
+
+#container ul ul ul {
+	margin-left: 120px;
+	top: 0px;
+	position: absolute;
+}
+
+.dropbtn {
+	background-color: #4CAF50;
+	color: white;
+	padding: 16px;
+	border: none;
+	border-radius:8px;	
+	font-size: 15px;
+	height:20px;
+	text-align:center;
+	cursor: pointer;
+}
+
+.dropdown {
+	display: inline-block;
+	position: relative;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+</style>
+</head>
+<body>
+	<div id="container">
+		<ul>
+			<li>Home</li>
+			<li>About</li>
+			<li>Entertainment
+				<ul>
+					<li>Hollywood</li>
+					<li>bollywood
+						<ul>
+							<li>Arijit Singh</li>
+							<li>Papon</li>
+							<li>Yesudas</li>
+						</ul>
+					</li>
+					<li>Tallywood</li>
+				</ul>
+			</li>
+			<li>contact</li>
+		</ul>
+	</div>
+
+	<br>
+	<br>
+	<br>
+	<div class="dropdown">
+		<button class="dropbtn">Gujarat</button>
+		<div class="dropdown-content">
+			<a href="#">Ahemdabad</a> <a href="#">Surat</a> <a href="#">Navsari</a>
+		</div>
+	</div>
+</body>
+</html>

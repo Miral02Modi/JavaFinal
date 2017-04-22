@@ -40,5 +40,12 @@ public class JsonDemo {
 		arr.add(emp1);
 		obj.put("Employee",arr);
 		System.out.println(obj);
+		
+		arr = (JSONArray) obj.get("Employee");
+		
+		for(int i=0 ;i< arr.size();i++){
+			JSONObject jobj = (JSONObject) arr.get(i);
+			System.out.println(jobj);
+		}
 	}
 }

@@ -1,9 +1,11 @@
 package com.bridgeit.addressbook.testApp;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Scanner;
 
 import com.bridgeit.addressbook.controller.AddressController;
+import com.bridgeit.addressbook.model.Url;
 import com.bridgeit.addressbook.service.AddressBookInter;
 import com.bridgeit.addressbook.service.AddressImple;
 
@@ -13,7 +15,9 @@ public class AddressBook {
 
 		AddressController abControl = new AddressController();
 		Scanner scanner = new Scanner(System.in);
-
+		
+		//abControl.addPerson();
+		//abControl.fileReader();
 		for (int i = 0;; i++) {
 
 			System.out.println("\t\t\t\t\t\t\t\t--------------***MENU***----------------\n\n");

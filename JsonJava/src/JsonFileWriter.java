@@ -86,24 +86,22 @@ public class JsonFileWriter {
 		}
 	}
 	
-	
-	public static void jsonFileReader(String url) throws IOException {
+	public static JSONObject jsonFileReader(String url) throws IOException {
 		FileReader fis=null;
 		JSONParser parser1 = new JSONParser();
+		JSONObject jsonobj = null;
 		try {
 			 
 			fis= new FileReader(url);
 			Object obj = parser1.parse(fis);
-			JSONObject jsonobj = (JSONObject) obj;
+			jsonobj = (JSONObject) obj;
 			System.out.println("Data Retrived Successfully");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
+		return jsonobj;
 	}
-
+	
 }

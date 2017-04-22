@@ -39,4 +39,11 @@ public class AddressController {
 	public void display(String name){
 		adbook.display(name);
 	}
+	public void fileWriter() {
+		adbook.fileWriter();
+	}
+	public void fileReader(){
+		adbook.fileReader();
+	}
+
 }

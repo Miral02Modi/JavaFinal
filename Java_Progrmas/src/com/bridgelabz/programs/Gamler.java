@@ -6,7 +6,7 @@ public class Gamler {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-
+		if(sc.hasNextInt()){
 		System.out.println("Enter your amount");
 		int amt = sc.nextInt();
 
@@ -16,7 +16,13 @@ public class Gamler {
 		System.out.println("Howmany time to play");
 		double num = sc.nextDouble();
 
-		double avg = (Util.gamlerPers(num, amt, goal) / num)*100;
-		System.out.println("Winning perentage" + Math.round(avg));
+		double win = (Util1.gamlerPers(num, amt, goal) / num)*100;
+		System.out.println("Winning perentage is::" + Math.round(win)+"%");
+		System.out.println("Lossing perentage is::" + (100-Math.round(win))+"%");
+		}
+		else{
+			System.out.println();
+		}
+			
 	}
 }

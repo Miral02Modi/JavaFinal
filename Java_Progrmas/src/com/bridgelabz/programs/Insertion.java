@@ -5,7 +5,7 @@ class Insertion
    public static void main(String args[])
    {
 	String str ="hello welcome to java world";
-	  char ch[] = Util.insertionSort(str.toCharArray());
+	  String ch[] = Util1.insertionSortStr(str.split(" "));
 	for(int i =0 ; i < ch	.length ;  i++)
 	    System.out.println(ch[i]);
    }  	
